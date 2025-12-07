@@ -1,0 +1,304 @@
+{
+  "info": {
+    "name": "Manajemen Kost API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Admin",
+      "item": [
+        {
+          "name": "Login Admin",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"username\": \"ibu_kost\",\n  \"password\": \"password_admin\"\n}"
+            },
+            "url": {
+              "raw": "http://localhost:5000/api/admin/login",
+              "protocol": "http",
+              "host": [
+                "localhost"
+              ],
+              "port": "5000",
+              "path": [
+                "api",
+                "admin",
+                "login"
+              ]
+            }
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kost",
+      "item": [
+        {
+          "name": "Get All Kost",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/kost"
+          }
+        },
+        {
+          "name": "Get Kost by ID",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/kost/1"
+          }
+        },
+        {
+          "name": "Create Kost",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_kost\": \"Kost Melati\",\n  \"alamat\": \"Jl. Mawar No. 2\",\n  \"keterangan\": \"Kost Putri\",\n  \"lantai\": 2\n}"
+            },
+            "url": "http://localhost:5000/api/kost"
+          }
+        },
+        {
+          "name": "Update Kost",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_kost\": \"Kost Melati Updated\",\n  \"alamat\": \"Jl. Mawar No. 2A\",\n  \"keterangan\": \"Updated\",\n  \"lantai\": 3\n}"
+            },
+            "url": "http://localhost:5000/api/kost/1"
+          }
+        },
+        {
+          "name": "Delete Kost",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:5000/api/kost/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Kamar",
+      "item": [
+        {
+          "name": "Get All Kamar",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/kamar"
+          }
+        },
+        {
+          "name": "Create Kamar",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_kamar\": \"A1\",\n  \"kost_id\": 1,\n  \"kategori_id\": 1,\n  \"harga\": 800000,\n  \"status\": \"Tersedia\"\n}"
+            },
+            "url": "http://localhost:5000/api/kamar"
+          }
+        },
+        {
+          "name": "Update Kamar",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama_kamar\": \"A1 Updated\",\n  \"kost_id\": 1,\n  \"kategori_id\": 1,\n  \"harga\": 850000,\n  \"status\": \"Terisi\"\n}"
+            },
+            "url": "http://localhost:5000/api/kamar/1"
+          }
+        },
+        {
+          "name": "Delete Kamar",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:5000/api/kamar/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Penyewa",
+      "item": [
+        {
+          "name": "Get All Penyewa",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/penyewa"
+          }
+        },
+        {
+          "name": "Create Penyewa",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama\": \"Nisa\",\n  \"no_telp\": \"0812345678\",\n  \"nik\": \"1234567890\",\n  \"kamar_id\": 1,\n  \"tanggal_masuk\": \"2025-01-01\",\n  \"tanggal_keluar\": \"2025-06-01\"\n}"
+            },
+            "url": "http://localhost:5000/api/penyewa"
+          }
+        },
+        {
+          "name": "Update Penyewa",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"nama\": \"Nisa Updated\",\n  \"no_telp\": \"08999999\",\n  \"nik\": \"12345\",\n  \"kamar_id\": 1,\n  \"tanggal_masuk\": \"2025-01-01\",\n  \"tanggal_keluar\": \"2025-08-01\"\n}"
+            },
+            "url": "http://localhost:5000/api/penyewa/1"
+          }
+        },
+        {
+          "name": "Delete Penyewa",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:5000/api/penyewa/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Booking",
+      "item": [
+        {
+          "name": "Get All Booking",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/booking"
+          }
+        },
+        {
+          "name": "Create Booking",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"penyewa_id\": 1,\n  \"kamar_id\": 1,\n  \"durasi_bulan\": 6,\n  \"tanggal_mulai\": \"2025-01-01\"\n}"
+            },
+            "url": "http://localhost:5000/api/booking"
+          }
+        },
+        {
+          "name": "Delete Booking",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:5000/api/booking/1"
+          }
+        }
+      ]
+    },
+    {
+      "name": "Pembayaran",
+      "item": [
+        {
+          "name": "Get All Pembayaran",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/pembayaran"
+          }
+        },
+        {
+          "name": "Create Pembayaran",
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"penyewa_id\": 1,\n  \"bulan\": \"Januari\",\n  \"tahun\": 2025,\n  \"jumlah\": 800000,\n  \"status\": \"Lunas\",\n  \"tanggal_bayar\": \"2025-01-01\"\n}"
+            },
+            "url": "http://localhost:5000/api/pembayaran"
+          }
+        },
+        {
+          "name": "Update Pembayaran",
+          "request": {
+            "method": "PUT",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"bulan\": \"Februari\",\n  \"tahun\": 2025,\n  \"jumlah\": 800000,\n  \"status\": \"Belum Bayar\",\n  \"tanggal_bayar\": null\n}"
+            },
+            "url": "http://localhost:5000/api/pembayaran/1"
+          }
+        },
+        {
+          "name": "Delete Pembayaran",
+          "request": {
+            "method": "DELETE",
+            "url": "http://localhost:5000/api/pembayaran/1"
+          }
+        },
+        {
+          "name": "Pembayaran Belum Bayar Bulan Ini",
+          "request": {
+            "method": "GET",
+            "url": "http://localhost:5000/api/pembayaran/belum-bayar-bulan-ini"
+          }
+        }
+      ]
+    }
+  ]
+}
